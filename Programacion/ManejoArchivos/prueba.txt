@@ -1,0 +1,3 @@
+Hola desde Java
+Esta es una nueva cadena
+Cadena de cierre.
