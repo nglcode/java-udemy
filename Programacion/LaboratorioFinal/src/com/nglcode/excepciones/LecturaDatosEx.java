@@ -2,6 +2,12 @@
 package com.nglcode.excepciones;
 
 
-public class LecturaDatosEx {
+public class LecturaDatosEx extends AccesoDatosEx {
+
+    public LecturaDatosEx(String msg) {
+        super(msg);
+    }
+    
+    
     
 }
