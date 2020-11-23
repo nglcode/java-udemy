@@ -1,8 +1,9 @@
+<%@page errorPage="WEB-INF/manejoErrores.jsp" %>
 <%@page import="util.Conversiones, java.util.Date" %>
 <%@page contentType="application/vnd.ms-excel" %>
 <%
     String nombreArchivo = "reporte.xls";
-    response.setHeader("Content-Disposition", "attachment;filename=" + nombreArchivo);
+    response.setHeader("Content-Disposition", "inline;filename=" + nombreArchivo);
 %>
 <!DOCTYPE html>
 <html>
