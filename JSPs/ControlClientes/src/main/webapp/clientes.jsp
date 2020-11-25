@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -9,20 +9,21 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/e8c1532b94.js" crossorigin="anonymous"></script>
-        
+
         <title>Control de Clientes</title>
     </head>
     <body>
         <!<!-- Cabecero -->
         <jsp:include page="WEB-INF/paginas/comunes/cabecero.jsp"/>
-        
-        <ul>
-            <c:forEach var="cliente" items="${clientes}">
-                <li>${cliente.idCliente} ${cliente.nombre} ${cliente.apellido} ${cliente.saldo} </li>
-                </c:forEach>
-        </ul>
 
+        <!<!-- Botones de navegacion -->
+        <jsp:include page="WEB-INF/paginas/comunes/botonesNavegacion.jsp"/>
 
+        <!<!-- Listado clientes -->
+        <jsp:include page="WEB-INF/paginas/cliente/listadoClientes.jsp"/>
+
+        <!<!-- Pie de pagina -->
+        <jsp:include page="WEB-INF/paginas/comunes/piePagina.jsp"/>
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
