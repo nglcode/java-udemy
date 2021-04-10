@@ -14,14 +14,12 @@ public class PersonaDAO {
         em = emf.createEntityManager();
     }
 
-    public void listar() {
+    public List<Persona> listar() {
         String hql = "SELECT p FROM Persona p";
         Query query = em.createQuery(hql);
         //con esto estamos recuperando objetos, no columnas de una tabla
         List<Persona> personas = query.getResultList();
-        for (Persona persona : personas) {
-            System.out.println(persona);
-        }
+        return personas;
     }
 
     public void insertar(Persona persona) {
