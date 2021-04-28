@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header" />
+        <a th:href="@{/agregar}">Crear Persona</a>
+        <br>
+        <div th:if="${personas != null and !personas.empty}">
+            <table>
+                <tr>
+                    <th>Nombre </th>
+                    <th>Apellido </th>
+                    <th>Email </th>
+                    <th>Teléfono </th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+
+                <tr th:each="persona : ${personas}">
+                    <td th:text="${persona.nombre}"></td>
+                    <td th:text="${persona.apellido}"></td>
+                    <td th:text="${persona.email}"></td>
+                    <td th:text="${persona.telefono}"></td>
+                    <td><a th:href="@{/editar/} + ${persona.idPersona}" th:text="Editar"/></td>
+                    <!<!-- Otra forma de pasar el parametro, usando query parameter -->
+                    <td><a th:href="@{/eliminar(idPersona=${persona.idPersona})}" th:text="Eliminar"/></td>
+                </tr>
+
+            </table>
+        </div>
+        <div th:if="${personas == null or personas.empty}">
+            No hay personas añadidas.
+        </div>
+        
+        <footer th:replace="layout/plantilla :: footer" />
+    </body>
+</html>
