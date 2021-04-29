@@ -11,7 +11,12 @@
         </header>
         
         <footer th:fragment="footer">
-            <p> [[#{plantilla.pie-pagina}]] <a href="http://apps.nglcode.website" target="_blank">NglcodeWebsite</a></p>
+            <div>
+                <br/>
+                    <a th:href="@{/(lang=es)}">ES</a> | 
+                    <a th:href="@{/(lang=en)}">EN</a>
+                    <span> [[#{plantilla.pie-pagina}]] <a href="http://apps.nglcode.website" target="_blank">NglcodeWebsite</a></span>
+            </div>
         </footer>
     </body>
 </html>
